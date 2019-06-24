@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-5">
+    <app-recipe-list (loadedSelectItem)="onItRSelected($event)">
+    </app-recipe-list>
+  </div>
+  <div class="col-md-7">
+    <app-recipe-detail
+      *ngIf="recipeSelectedFinally; else infoText"
+      [recipeD]="recipeSelectedFinally"
+    >
+    </app-recipe-detail>
+    <ng-template #infoText><p>This is CRAP!!!!</p></ng-template>
+  </div>
+</div>
